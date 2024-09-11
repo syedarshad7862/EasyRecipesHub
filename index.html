@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>EasyRecipesHub</title>
+      <meta name="description" content="Find quick and easy recipes for breakfast, lunch, and dinner. Explore the best meal ideas for fast, healthy cooking.">
+      <link rel="stylesheet" href="./src/output.css">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body class="">
+      <header>
+            <nav class="w-full px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between bg-white bg-opacity-50 shadow-sm">
+                  <div class="text-4xl">
+                        <i class="ri-bowl-line"></i>
+                  </div>
+                <ul class="hidden md:flex items-center justify-center gap-6 lg:gap-8 font-medium text-lg">
+                  <li class="hover:text-slate-800 hover:underline"><a href="" id="Home">Home</a></li>
+                  <li class="hover:text-slate-800 hover:underline"><a href="" id="">Recipe</a></li>
+                </ul>
+                <div class="">
+                  <button class="hidden md:flex items-center gap-3 px-10 py-2.5 border border-gray-300 rounded-full ml-3 font-medium">Sign In</button>
+                </div>
+                <!-- menu icon -->
+                  <button class="black md:hidden ml-3 text-[32px] cursor-pointer" onclick="openMenu()">
+                        <i class="ri-menu-3-fill"></i>
+                  </button>
+                  <ul id="sideMenu" class="flex md:hidden flex-col py-20 px-10 fixed gap-4 -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-bold">
+                        <button class="absolute right-6 top-6 text-xl" onclick="closeMenu()">
+                              <i class="ri-twitter-x-fill"></i>
+                        </button>
+                        <li id="home"><a href="" onclick="closeMenu">Home</a></li>
+                        <li id="aboutus"><a href="" onclick="closeMenu">About us</a></li>
+                        <li id="contact"><a href="" onclick="closeMenu">Contact us</a></li>
+                        <li id="blog"><a href="" onclick="closeMenu">Blog</a></li>
+                  </ul>
+            </nav>
+            </header>
+      
+      <!-- main content -->
+      <main class="">
+            <section class="m-3">
+                  <h1 class="font-medium text-center text-4xl md:text-6xl my-6">Quick and Healthy Recipes</h1>
+                  <div class="w-full flex items-center justify-center">
+                        <input type="text" id="search" placeholder="Search Your Meal" class="w-60 md:w-96 lg:w-80 xl:w-9/12 px-5 py-3.5 outline-none border rounded-l-lg border-black placeholder:text-xl placeholder:text-slate-500 placeholder:italic">
+                        <button type="submit" id="btn" class="w-[55px] h-[55px] text-base md:text-[1.8rem] rounded-r-lg text-white bg-black border-none outline-none border border-black  font-bold rounded-s-sm"><i class="ri-search-line"></i></button>
+                  </div>
+                  <h2 class="font-medium text-center text-3xl md:text-4xl my-3">Your Search Results:</h2>
+                  <!-- cards starts here -->
+                  <div class="recipe-container mt-6 flex items-center gap-5 justify-center flex-wrap mx-auto">
+                        <!-- card 1 -->
+                        <!-- <div class="max-w-sm rounded-lg shadow-lg overflow-hidden mb-3 bg-white">
+                              <div class="md:flex">
+                                    <img src="/images/breakfast.jpg" class="w-full object-cover h-48" srcset="">
+                              </div>
+                              <div class="p-5 text-center">
+                                    <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold"> An Awesom Card</div>
+                                    <p class="mt-1 text-sm font-medium text-red-500 underline cursor-pointer hover:text-red-700">View Recipe</p>
+                                    <div class="flex justify-around gap-5">
+                                          <p class="mt-1 text-sm font-medium text-red-500 underline">View Recipe</p>
+                                          <div>book marks</div>
+                                    </div>
+                              </div>
+                        </div> -->
+                  </div>
+
+                  <!-- Modal -->
+                        <div id="recipeModal" class="hidden modal fixed top-0 left-0 z-[100] w-full h-full bg-[rgba(0, 0, 0, 0.5)] overflow-scroll">
+                              <div class="modal-content my-[5%] mx-auto p-8 w-[80%] max-w-[600px] relative bg-[#fefefe] rounded-sm shadow-sm">
+                              <span id="closeModal" class="closeModal text-3xl font-medium cursor-pointer absolute top-3 right-5">&times;</span>
+                              <h2 id="modalMealTitle" class="text-xl font-medium "></h2>
+                              <!-- <img id="modalMealImage" src="" alt="Meal Image"> -->
+                              <h3 class="text-2xl font-medium text-indigo-600">Ingredients:</h3>
+                              <ul id="modalIngredients"></ul>
+                              <h3 class="text-2xl font-medium text-indigo-600">Instructions:</h3>
+                              <p id="modalInstructions"></p>
+                              </div>
+                        </div>
+            </section>
+      </main>
+      <script src="script.js"></script> 
+</body>
+</html>
